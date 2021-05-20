@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4452184B2656D81D00E4CE7F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4452184A2656D81D00E4CE7F /* README.md */; };
 		44A173BB2649E14A00B634FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A173BA2649E14A00B634FE /* AppDelegate.swift */; };
 		44A173BF2649E14A00B634FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A173BE2649E14A00B634FE /* ContentView.swift */; };
 		44A173CF2649F1BF00B634FE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A173CE2649F1BF00B634FE /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4452184A2656D81D00E4CE7F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		44A173B72649E14A00B634FE /* TooMany.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TooMany.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A173BA2649E14A00B634FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44A173BE2649E14A00B634FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +36,7 @@
 		44A173AE2649E14A00B634FE = {
 			isa = PBXGroup;
 			children = (
+				4452184A2656D81D00E4CE7F /* README.md */,
 				44A173B92649E14A00B634FE /* TooMany */,
 				44A173B82649E14A00B634FE /* Products */,
 			);
@@ -116,6 +119,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4452184B2656D81D00E4CE7F /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
