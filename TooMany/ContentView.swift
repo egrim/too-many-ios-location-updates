@@ -8,33 +8,34 @@
 
 import SwiftUI
 
-let stepsToReproduce = """
-1. configure simulator to receive location updates (e.g. select "Features > Location > Freeway Drive" from the menu)
+let stepsToReproduce: String? = {
+    do {
+        guard let readmeFileURL = Bundle.main.url(forResource:"README", withExtension: "md") else { return nil }
 
-2. launch fresh install of app and grant "while in use"; note continuous location updates being delivered to app in console output despite only requesting a single location update
-
-3. go to home screen and watch console printouts to wait until location updates stop being delivered to app
-
-4. launch another app
-
-5. go back to home screen, you should be prompted for when-in-use/always location authorization for app
-
-6. if you choose always, location updates will resume to app (as seen in console); if you choose "while is use" relaunch app
-
-7. location updates will resume
-
-8. go back to home screen, location updates will continue (with blue banner/pill indicating location updates in progress)
-"""
+        let readmeText = try String(contentsOf: readmeFileURL)
+        let reproSteps = readmeText.components(separatedBy: "<!-- REPRO_STEPS -->\n")[1]
+        return reproSteps
+    } catch {
+        print("Could not retrieve steps to reproduce from README.md")
+        return nil
+    }
+}()
 
 struct ContentView: View {
+
+
     var body: some View {
         ScrollView {
-            Text("Unwanted Location Updates Demo")
-                .font(.largeTitle)
-                .padding(.bottom)
-            Text(stepsToReproduce)
+            VStack(alignment: .leading) {
+                Text("Too Many Location Updates Demo")
+                    .font(.largeTitle)
+                    .padding(.bottom)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text(stepsToReproduce ?? "See README in project for steps to demonstrate receiving unwanted continuous location updates.")
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.all)
         }
-        .padding(.all)
         .edgesIgnoringSafeArea(.bottom)
     }
 }

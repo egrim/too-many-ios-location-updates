@@ -8,6 +8,7 @@ This project shows an apparent regression between iOS versions 13 and 14 where a
 ### Steps to reproduce
 
 Here are the steps necessary to reproduce this problem:
+<!-- REPRO_STEPS -->
 1. if using a simulator, configure it to receive location updates (e.g. select "Features > Location > Freeway Drive" from the menu)
 
 2. launch fresh install of app and grant "while in use"; note continuous location updates being delivered to app in console output despite only requesting a single location update (at this point the bug has been triggered, the rest just demonstrates how problematic it is for apps that request background location updates)
@@ -23,6 +24,8 @@ Here are the steps necessary to reproduce this problem:
 7. location updates will resume
 
 8. go back to home screen, location updates will continue (with blue banner/pill indicating location updates in progress)
+<!-- REPRO_STEPS -->
+
 
 These instructions are also displayed in the demo app's UI.
 
