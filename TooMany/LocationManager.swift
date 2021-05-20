@@ -6,7 +6,17 @@
 //  Copyright © 2021 Evan Grim. All rights reserved.
 //
 
+import os
 import CoreLocation
+
+
+func log(_ message: String) {
+    if #available(iOS 14, *) {
+        os_log("\(message, privacy: .public)")
+    } else {
+        print(message)
+    }
+}
 
 
 class LocationManager: NSObject, CLLocationManagerDelegate {
@@ -23,15 +33,15 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("didUpdateLocations: \(locations)")
+        log("didUpdateLocations: \(locations)")
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("didFailWithError: \(error)")
+        log("didFailWithError: \(error)")
     }
 
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        print("didChangeAuthorization: authorizationStatus=\(CLLocationManager.authorizationStatus().debug)")
+        log("didChangeAuthorization: authorizationStatus=\(CLLocationManager.authorizationStatus().debug)")
     }
 }
 
